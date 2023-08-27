@@ -1,0 +1,275 @@
+@media screen and (max-width: 1300px) {
+  .collect-img-p > p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .food-choice {
+    flex-wrap: wrap;
+  }
+
+  .search-restaurant-delivery {
+    width: 10rem;
+  }
+
+  .delivery-option {
+    flex-wrap: wrap;
+  }
+
+  .delivery-filter {
+    position: static;
+  }
+  .delivery-search {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .search-city-delivery div,
+  .search-city-delivery {
+    width: 20rem;
+  }
+  .search-city-delivery input {
+    width: 15rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .collect-header {
+    margin: 0 20px;
+  }
+  .collection-blog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .collection-blog a {
+    height: 18rem;
+    max-width: 18%;
+  }
+
+  .order-sec {
+    flex-wrap: wrap;
+  }
+
+  .order a {
+    width: max-content;
+    height: 100%;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+  }
+  .search-restaurant {
+    width: 100%;
+  }
+  .footer-about-div {
+    flex-wrap: wrap;
+  }
+  .zomato-app-text {
+    width: 60%;
+  }
+  .header-navbar navbar {
+    display: flex;
+  }
+  .collection-blog > div {
+    height: 20rem !important;
+  }
+
+  .image-detail-page {
+    width: 500px;
+    height: max-content;
+    margin: 15px 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* .collection-blog {
+    flex-direction: column;
+  } */
+
+  .collect-img {
+    background-size: 100%;
+  }
+
+  .collect-img-p > p {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .collection-blog {
+    flex-direction: column;
+  }
+  .collect-img {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .location-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .homepage h1 {
+    font-size: 1.5rem;
+  }
+
+  .collect-header div {
+    flex-wrap: wrap;
+  }
+
+  .navigation {
+    padding: 1rem 10px;
+  }
+  .input-submit {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .searchbox .fa-sort-up {
+    display: none;
+  }
+  .location_header p {
+    font-size: 30px;
+  }
+  .location-right-text h6 {
+    font-size: 20px;
+  }
+
+  .app-image img {
+    width: 200px;
+    height: 100%;
+  }
+  .app-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-submit div input {
+    font-size: 1rem;
+  }
+  .input-submit div {
+    padding: 0;
+  }
+
+  .appfrom {
+    flex-direction: column;
+  }
+
+  .zomato-app-text > h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .chains-near-option ul,
+  .cities-near-option ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navigation-home > div:first-of-type a {
+    font-size: 0.8rem;
+  }
+
+  .navigation-home {
+  }
+
+  .navigation-home > div:last-of-type {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navigation-home > div:last-of-type p,
+  .loginregister p {
+    margin-bottom: 0 !important;
+  }
+  .navigation-home > div:last-of-type a,
+  .loginregister p a {
+    font-size: 0.8rem;
+  }
+  #restaurant-context,
+  #restaurant-cost,
+  .detail_page p {
+    font-size: 1.3rem;
+  }
+}
+
+/* delivery */
+
+@media screen and (max-width: 600px) {
+  .location-buttons {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  .zomato-app {
+    flex-direction: column;
+  }
+  .searchbox {
+    flex-direction: column;
+  }
+
+  .image-detail-page {
+    width: 450px;
+  }
+
+  .delivery-img img {
+    height: 25px;
+  }
+
+  .search-city-delivery div,
+  .search-city-delivery {
+    width: 14rem;
+  }
+  .search-city-delivery input {
+    width: 10rem;
+  }
+  .image-detail-page {
+    width: 400px;
+  }
+  #restaurant-context,
+  #restaurant-cost,
+  #restaurant-meals {
+    font-size: 1.2rem;
+  }
+  #restaurant-name {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image-detail-page {
+    width: 330px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .delivery-img {
+    flex-direction: column;
+  }
+  .delivery-filter {
+    flex-direction: column;
+    padding-left: 10px;
+  }
+  .list-data-delivery {
+  }
+  .image-food-list {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-detail-page {
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .image-detail-page {
+    width: 250px;
+  }
+}

@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomato</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    {% if debug %}
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module">
+      import RefreshRuntime from "http://localhost:5173/@react-refresh";
+      RefreshRuntime.injectIntoGlobalHook(window);
+      window.$RefreshReg$ = () => {};
+      window.$RefreshSig$ = () => (type) => type;
+      window.__vite_plugin_react_preamble_installed__ = true;
+    </script>
+    <script type="module" src="http://localhost:5173/src/main.jsx"></script>
+    {%else%}
+    <script
+      type="module"
+      crossorigin
+      src="{% static '/assets/index-ba6a3411.js'%}"
+    ></script>
+    <link rel="stylesheet" href="{% static '/assets/css/index.min3.css'%}" />
+    {%endif%}
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import React from "/path/to/react.js";
+      import ReactDOM from "/path/to/react-dom.js";
+      import DataDisplay from "/path/to/DataDisplay.js";
+
+      ReactDOM.render(<Delivery />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
