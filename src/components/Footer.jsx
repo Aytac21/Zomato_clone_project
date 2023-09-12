@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import i18n from "./../pages/i18n";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <>
       <footer className="">
@@ -16,25 +24,25 @@ function Footer() {
           <div className="footer-about-div">
             <ul className="footer-div-column">
               <li>
-                <h6>ABOUT ZOMATO</h6>
+                <h6>{t("ABOUTZOMATO")}</h6>
               </li>
               <li>
-                <Link to={"/who-we-are"}>Who We Are</Link>
+                <Link to={"/who-we-are"}>{t("page1")}</Link>
               </li>
               <li>
-                <Link to={"/blog"}>Blog</Link>
+                <Link to={"/blog"}>{t("page2")}</Link>
               </li>
               <li>
-                <a href="">Work With Us</a>
+                <a href="">{t("WorkWithUs")}</a>
               </li>
               <li>
-                <a href="">Investor Relations</a>
+                <a href="">{t("InvestorRelations")}</a>
               </li>
               <li>
-                <a href="">Report Fraud</a>
+                <a href="">{t("ReportFraud")}</a>
               </li>
               <li>
-                <Link to={"/contact"}>Contact Us</Link>
+                <Link to={"/contact"}>{t("ContactUs")}</Link>
               </li>
             </ul>
             <ul className="footer-div-column">
@@ -42,60 +50,57 @@ function Footer() {
                 <h6>Zomaverse</h6>
               </li>
               <li>
-                <a href="">Zomato</a>
+                <a href="/home">Zomato</a>
               </li>
               <li>
-                <a href="">Blinkit</a>
+                <a href="https://blinkit.com/">Blinkit</a>
               </li>
               <li>
-                <a href="">Feeding India</a>
+                <a href="https://www.feedingindia.org/">Feeding India</a>
               </li>
               <li>
-                <a href="">Hyperpure</a>
-              </li>
-              <li>
-                <a href="">Zomaland</a>
+                <a href="https://www.hyperpure.com/">Hyperpure</a>
               </li>
             </ul>
             <ul className="footer-div-column">
               <li>
-                <h6>For Restaurants</h6>
+                <h6>{t("ForRestaurants")}</h6>
               </li>
               <li>
-                <a href="">Partner With Us</a>
+                <a href="">{t("PartnerWithUs")}</a>
               </li>
               <li>
                 <a href="https://play.google.com/store/apps/details?id=com.application.services.partner&hl=en_IN&gl=US">
-                  Apps For You
+                  {t("AppsForYou")}
                 </a>
               </li>
               <li>
-                <h6>For Enterprises</h6>
+                <h6>{t("ForEnterprises")}</h6>
               </li>
               <li>
-                <a href="">Zomato For Enterprise</a>
+                <a href="">{t("ZomatoForEnterprise")}</a>
               </li>
             </ul>
             <ul className="footer-div-column">
               <li>
-                <h6>Learn More</h6>
+                <h6>{t("LearnMore")}</h6>
               </li>
               <li>
-                <a href="">Privacy</a>
+                <a href="">{t("Privacy")}</a>
               </li>
               <li>
-                <a href="">Security</a>
+                <a href="">{t("Security")}</a>
               </li>
               <li>
-                <a href="">Terms</a>
+                <a href="">{t("Terms")}</a>
               </li>
               <li>
-                <a href="">Sitemap</a>
+                <a href="">{t("Sitemap")}</a>
               </li>
             </ul>
             <ul className="footer_social">
               <li>
-                <h6>SOCIAL LINKS</h6>
+                <h6>{t("SOCIALLINKS")}</h6>
               </li>
               <li className="footer-icons">
                 <a href="https://www.linkedin.com/company/zomato/?originalSubdomain=in">
@@ -132,12 +137,7 @@ function Footer() {
           </div>
           <div className="footer-hr">
             <hr />
-            <p>
-              By continuing past this page, you agree to our Terms of Service,
-              Cookie Policy, Privacy Policy and Content Policies. All trademarks
-              are properties of their respective owners. 2008-2023 © Zomato™
-              Ltd. All rights reserved.
-            </p>
+            <p>{t("footerdesc")}</p>
           </div>
         </div>
       </footer>

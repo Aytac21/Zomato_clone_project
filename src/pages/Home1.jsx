@@ -1,11 +1,20 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import i18n from "./i18n";
+
 import Modal from "react-modal";
 import Login from "./../components/Login";
 import Signup from "./../components/Signup";
 import axios from "axios";
 
 function Home1() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [signupModalOpen, setSignupModalOpen] = useState(false);
 
@@ -194,24 +203,28 @@ function Home1() {
     <>
       <div className="header-navbar">
         <navbar>
+          <div className="header-languange">
+            <button onClick={() => changeLanguage("en")}>English</button>
+            <button onClick={() => changeLanguage("az")}>Azərbaycan</button>
+          </div>
           <div className="container-ay">
             <div className="position">
               <div className="navigation-home">
                 <div>
                   <i className="fa-solid fa-mobile-screen-button"></i>
                   <Link to={`/zomatoapp`}>
-                    <a href="">Get the App</a>
+                    <a href="">{t("app")}</a>
                   </Link>
                 </div>
                 <nav className="main-nav">
                   <div>
                     <p>
-                      <Link to={`/who-we-are/`}>Who we are</Link>
+                      <Link to={`/who-we-are/`}>{t("page1")}</Link>
                     </p>
 
                     <p>
                       <Link to={`/`}>
-                        <a>Logout</a>
+                        <a>{t("Logout")}</a>
                       </Link>
                     </p>
                   </div>
@@ -236,7 +249,7 @@ function Home1() {
                 src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png"
                 alt=""
               />
-              <h1>Discover the best food & drinks in Baku</h1>
+              <h1>{t("zomatodescription")}</h1>
               <div className="searchbox">
                 <div className="search-city-delivery">
                   <div>
@@ -245,7 +258,7 @@ function Home1() {
                       value={searchValue}
                       onChange={(e) => handleChangeSearch(e)}
                       type="text"
-                      placeholder="Search for restaurant"
+                      placeholder={t("searchplaceholder")}
                     />
                     <i
                       className={`fa-solid ${
@@ -295,8 +308,8 @@ function Home1() {
                 />
               </div>
               <div className="order-p">
-                <p>Order Online</p>
-                <p>Stay home and order to your doorstep</p>
+                <p>{t("OrderOnline")}</p>
+                <p>{t("OrderOnlinedesc")}</p>
               </div>
             </Link>
           </div>
@@ -309,8 +322,8 @@ function Home1() {
                 />
               </div>
               <div className="order-p">
-                <p>Dining</p>
-                <p>View the cities favourite dining venues</p>
+                <p>{t("Dining")}</p>
+                <p>{t("Diningdesc")}</p>
               </div>
             </Link>
           </div>
@@ -323,20 +336,17 @@ function Home1() {
                 />
               </div>
               <div className="order-p">
-                <p>Nightlife and Clubs</p>
-                <p>Explore the city’s top nightlife outlets</p>
+                <p>{t("Nightlife")}</p>
+                <p>{t("Nightlifedesc")}</p>
               </div>
             </Link>
           </div>
         </section>
         <section className="collection-div">
           <div className="collect-header">
-            <h1>Collections</h1>
+            <h1>{t("Collections")}</h1>
             <div>
-              <p>
-                Explore curated lists of top restaurants, cafes, pubs, and bars
-                in Delhi NCR, based on trends
-              </p>
+              <p>{t("Collectionsdesc")}</p>
             </div>
           </div>
           <div className="collection-blog">
@@ -352,9 +362,10 @@ function Home1() {
             >
               <Link to="/collection1">
                 <div className="collect-img-p">
-                  <p>Celeb-loved Places</p>
+                  <p>{t("collect1")}</p>
                   <p>
-                    10 Places <i className="fa-solid fa-caret-right"></i>
+                    {t("collect1desc")}{" "}
+                    <i className="fa-solid fa-caret-right"></i>
                   </p>
                 </div>
               </Link>
@@ -372,9 +383,10 @@ function Home1() {
             >
               <Link to="/collection2">
                 <div className="collect-img-p">
-                  <p>Unique Dining Experiences</p>
+                  <p>{t("collect2")}</p>
                   <p>
-                    9 Places <i className="fa-solid fa-caret-right"></i>
+                    {t("collect2dec")}
+                    <i className="fa-solid fa-caret-right"></i>
                   </p>
                 </div>
               </Link>
@@ -392,9 +404,10 @@ function Home1() {
             >
               <Link to="/collection3">
                 <div className="collect-img-p">
-                  <p>Unique Dining Experiences</p>
+                  <p>{t("collect3")}</p>
                   <p>
-                    13 Places <i className="fa-solid fa-caret-right"></i>
+                    {t("collect3dec")}
+                    <i className="fa-solid fa-caret-right"></i>
                   </p>
                 </div>
               </Link>
@@ -412,9 +425,10 @@ function Home1() {
             >
               <Link to="/collection4">
                 <div className="collect-img-p">
-                  <p>Unique Dining Experiences</p>
+                  <p>{t("collect4")}</p>
                   <p>
-                    21 Places <i className="fa-solid fa-caret-right"></i>
+                    {t("collect4dec")}{" "}
+                    <i className="fa-solid fa-caret-right"></i>
                   </p>
                 </div>
               </Link>
@@ -423,15 +437,15 @@ function Home1() {
         </section>
         <section className="popular-location-sec">
           <div className="location_header">
-            <p>Popular blogs on Zomato website</p>
+            <p>{t("blogtext")}</p>
           </div>
           <div className="location-buttons">
             <a href="">
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/5`}>
-                    <h6>Introducing Zomato Food Trends</h6>
-                    <p>Data Insights for All</p>
+                    <h6>{t("blogtext1")}</h6>
+                    <p>{t("blogtext1desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -443,10 +457,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/10`}>
-                    <h6>
-                      How Zomato Handles 100 Million Daily Search Queries!
-                    </h6>
-                    <p>Explained</p>
+                    <h6>{t("blogtext2")}</h6>
+                    <p>{t("blogtext2desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -458,8 +470,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/7`}>
-                    <h6>Q4FY23 shareholders’ letter </h6>
-                    <p>Results</p>
+                    <h6>{t("blogtext3")}</h6>
+                    <p>{t("blogtext3desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -471,8 +483,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/13`}>
-                    <h6>The Shelter Project</h6>
-                    <p>Introducing</p>
+                    <h6>{t("blogtext4")}</h6>
+                    <p>{t("blogtext4desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -484,8 +496,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/23`}>
-                    <h6>Healthy on the Zomato app</h6>
-                    <p>Introducing</p>
+                    <h6>{t("blogtext5")}</h6>
+                    <p>{t("blogtext5desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -497,8 +509,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/24`}>
-                    <h6>The love for food knows no boundaries</h6>
-                    <p>Company</p>
+                    <h6>{t("blogtext6")}</h6>
+                    <p>{t("blogtext6desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -510,8 +522,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/20`}>
-                    <h6>In the end, it’s all worth it</h6>
-                    <p>Culture</p>
+                    <h6>{t("blogtext7")}</h6>
+                    <p>{t("blogtext7desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -523,8 +535,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/1`}>
-                    <h6>100% plastic neutral deliveries</h6>
-                    <p>Introducing</p>
+                    <h6>{t("blogtext8")}</h6>
+                    <p>{t("blogtext8desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -536,8 +548,8 @@ function Home1() {
               <div className="location-btn">
                 <div className="location-right-text">
                   <Link to={`/blog/3`}>
-                    <h6>CFO</h6>
-                    <p>A new kind of</p>
+                    <h6>{t("blogtext9")}</h6>
+                    <p>{t("blogtext9desc")}</p>
                   </Link>
                 </div>
                 <div className="location-icon">
@@ -557,10 +569,8 @@ function Home1() {
             />
           </div>
           <div className="zomato-app-text">
-            <h1>Get the Zomato app</h1>
-            <p>
-              We will send you a link, open it on your phone to download the app
-            </p>
+            <h1>{t("zomatoapp")}</h1>
+            <p>{t("zomatoappdesc")}</p>
             <div className="radio-option">
               <form onSubmit={handleSubmitForm}>
                 <div className="select-options">
@@ -573,7 +583,7 @@ function Home1() {
                       checked={contactOption === "email"}
                       onChange={handleContactOptionChange}
                     />
-                    <label htmlFor="emailOption">Email</label>
+                    <label htmlFor="emailOption">{t("email")}</label>
                   </div>
                   <div>
                     <input
@@ -584,19 +594,21 @@ function Home1() {
                       checked={contactOption === "phone"}
                       onChange={handleContactOptionChange}
                     />
-                    <label htmlFor="phoneOption">Phone</label>
+                    <label htmlFor="phoneOption">{t("Phone")}</label>
                   </div>
                 </div>
                 {contactOption === "email" && (
                   <div className="input-submit">
-                    <input
-                      type="email"
-                      id="emailInput"
-                      value={email}
-                      onChange={handleEmailChange}
-                      placeholder="Email"
-                    />
-                    <button type="submit">Share App Link</button>
+                    <div>
+                      <input
+                        type="email"
+                        id="emailInput"
+                        value={email}
+                        onChange={handleEmailChange}
+                        placeholder={t("email")}
+                      />
+                    </div>
+                    <button type="submit">{t("shareapplink")}</button>
                   </div>
                 )}
                 {contactOption === "phone" && (
@@ -619,10 +631,10 @@ function Home1() {
                         id="phoneInput"
                         value={phone}
                         onChange={handlePhoneChange}
-                        placeholder="bura yazın..."
+                        placeholder={t("Phone")}
                       />
                     </div>
-                    <button type="submit">Share App Link</button>
+                    <button type="submit">{t("shareapplink")}</button>
                   </div>
                 )}
               </form>
@@ -632,7 +644,7 @@ function Home1() {
               {errorMessage && <div className="error">{errorMessage}</div>}
             </div>
             <div className="appfromdiv">
-              <p>Download app from</p>
+              <p>{t("Downloadappfrom")}</p>
               <div className="appfrom">
                 <img
                   src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png"
@@ -649,12 +661,12 @@ function Home1() {
       </section>
       <section className="near-location-sec container-ay">
         <div className="near-header">
-          <h1>Explore options near me</h1>
+          <h1>{t("nearrestaurantsection")}</h1>
         </div>
         <div className="near-options">
           <div>
             <div onClick={() => handleDivClick(1)}>
-              <p>Popular restaurant types near me</p>
+              <p>{t("nearrestoption1")}</p>
               <i
                 className={`fa-solid fa-chevron-${
                   openDiv === 1 ? "up" : "down"
@@ -740,7 +752,7 @@ function Home1() {
           </div>
           <div>
             <div onClick={() => handleDivClick(2)}>
-              <p>Top Restaurant Chains</p>
+              <p>{t("nearrestoption2")}</p>
               <i
                 className={`fa-solid fa-chevron-${
                   openDiv === 1 ? "up" : "down"
@@ -831,7 +843,7 @@ function Home1() {
           </div>
           <div>
             <div onClick={() => handleDivClick(3)}>
-              <p>Cities We Deliver To</p>
+              <p>{t("nearrestoption3")}</p>
               <i
                 className={`fa-solid fa-chevron-${
                   openDiv === 1 ? "up" : "down"
